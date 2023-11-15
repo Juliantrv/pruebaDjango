@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Portal empleo</h1>
+    
+    {% if ofertas|length == 0 %}
+
+        <h2>No hay ofertas por el momento</h2>
+
+    {% else %}
+
+        <h2>{{ofertas.title}}</h2>
+        <p>{{ofertas.descripcion}}</p>
+        <p>{{ofertas.salario}}</p>
+        <p>{{ofertas.habiliadades}}</p>
+        <p>{{ofertas.fechaDeCreacion}}</p>
+        <p>{{ofertas.actualizacion}}</p>
+        <p>{{ofertas.empresa}}</p>
+
+    {% endif %}
+
+{% endblock %}

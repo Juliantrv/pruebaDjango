@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>Crear ofertas de empleo empleo</h1>
+
+    <p>
+        Para las habiliadades por favor separe cadauna con comas, ejemplo:
+        Node.js, .net, javaScript, ...etc.
+    </p>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Save</button>
+    </form>
+{% endblock %}

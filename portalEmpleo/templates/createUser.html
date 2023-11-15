@@ -1,0 +1,29 @@
+{% extends 'index.html'%}
+
+{% block content %}
+<h1>Creación de usuario</h1>
+
+<h2>{{error}}</h2>
+
+{% if error != 'El registro de usuario se a realizo con exito, a su correo le llegar un mensaje de confirmación'  %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <h3>Información basica</h3>
+        <label >Nombres</label>
+        <input type="text" name="nombres">
+        <label >Apellidos</label>
+        <input type="text" name="apellidos">
+        {{infoUsuario.as_p}}
+        <h3>Datos de usuario</h3>
+        <label >Email</label>
+        <input type="text" name="email">
+        {{form.as_p}}
+        <button>Save</button>
+    </form>
+
+{% endif %}
+
+
+
+{% endblock %}
